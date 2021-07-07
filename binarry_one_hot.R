@@ -45,8 +45,7 @@ binary_one_hot <- function(data, file_format = "fasta", output_file){
   x2 <- paste("C",str_remove(unlist(str_split(basename(data), "[.]"))[1], "_C12"), sep = "")
   colnames(df) <- paste(x2, x, sep = "_")
   write.csv(df, file = paste(x2, "_C12.csv", sep = ""))
-  #rm_row <- apply(df, 2, function(x){length(unique(x))})
-  #write.csv(df[,-as.integer(which(rm_row == 1))], file = paste(x2, "_C12.csv", sep = ""))
+  
   rm(df)
   rm(a)
 }
